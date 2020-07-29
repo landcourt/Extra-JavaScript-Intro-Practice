@@ -568,11 +568,19 @@ const airports = [
 // };
 // myFunction();
 
+let myFunction = () => console.log("Function was invoked!");
 
+myFunction();
+  
 // let anotherFunction = function (param) {
 //   return param;
 // };
 // anotherFunction("Example");
+
+let anotherFunction = param => param;
+
+ 
+ console.log(anotherFunction("Example"));
 
 
 // let add = function (param1, param2) {
@@ -580,17 +588,32 @@ const airports = [
 // };
 // add(1,2);
 
+let add = (param1, param2) => param1 + param2;
+
+console.log(add(1,2));
 
 // let subtract = function (param1, param2) {
 //   return param1 - param2;
 // };
 // subtract(1,2);
 
+let subtract = (param1, param2) => param1 - param2;
+
+console.log(subtract(1,2));
 
 /* Work out 💪 */
 /* TASK 1 🚀 
 // Dollars to Euros - write a function that will take an amount of dollars (USD) and change it  into euros (EUR) - with the current exchange rate 1 USD === .85 EUR */
 
+let USD = 1;
+let EUR = .85; 
+
+function converter (dollarAmount, no1, euroAmount) {
+  dollarAmount = no1 * euroAmount;
+  return dollarAmount;
+}
+
+console.log(converter(USD, 83, EUR));
 
 /* TASK 2 🚀 
 // Take the function above a step further - you have dollars and you are visiting the following 5 countries: Britan, Germany, Turkey, Bulgaria and Ukraine - you need to write a function that will take a dollar amount, and a country and return the exchange rate for that country - the function should return a string that says `your exchange rate for dollarAmount dollars in country will be exchangeRate currencyInitals ` If the country is not on your list your string should return 'that country is not on your list'
@@ -601,10 +624,44 @@ const airports = [
 // 1 usd === 27.7 Ukrainian hryvnia */
 
 
+let GBP = .77;
+let TRY = 6.96;
+let BGN = 1.66;
+let UAH = 27.7;
+
+
+
+function advConverter(dollarAmount, country, no2){
+  
+  dollarAmount = country * no2;
+
+  if (dollarAmount == country * no2){
+  console.log (`your exchange rate for ${USD} dollars in ${country} will be ${dollarAmount}`)
+} else {
+  console.log ('that country is not on your list')
+  }};
+ 
+  console.log(advConverter(USD, BGN, 5))
+
 /*TASK 3 🚀
 /// Write a function that takes an airport code and returns the city, country of that airport 
 // find the following codes AAA, ABZ, ABX, ABT, ACA */
 
+const airCodes = [ ];
+for(let i = 0; i < airports.length; i++){
+  if (airports[i]["code"] === "AAA"){
+    airCodes.push(airports[i]["city"]);
+} if (airports[i]["code"] === "ABZ"){
+  airCodes.push(airports[i]["city"]);
+} if (airports[i]["code"] === "ABX"){
+  airCodes.push(airports[i]["city"]);
+} if (airports[i]["code"] === "ABT"){
+  airCodes.push(airports[i]["city"]);
+} if (airports[i]["code"] === "ACA"){
+  airCodes.push(airports[i]["city"]);
+} 
+}
+console.log(airCodes)
 
 /*TASK 4 🚀 
 // Write a function to that will find the phone number for an airport in a given city  */
